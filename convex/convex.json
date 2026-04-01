@@ -1,1 +1,73 @@
-
+{
+  "project": "superwincasino",
+  "team": "superwin-team",
+  "url": "https://superwincasino.convex.cloud",
+  "prodUrl": "https://superwincasino.convex.site",
+  "storage": {
+    "enabled": true
+  },
+  "tables": [
+    {
+      "name": "Wallet",
+      "fields": {
+        "userId": "string",
+        "balance": "number",
+        "currency": "string",
+        "updatedAt": "datetime"
+      }
+    },
+    {
+      "name": "Transaction",
+      "fields": {
+        "userId": "string",
+        "amount": "number",
+        "type": "string",
+        "status": "string",
+        "createdAt": "datetime"
+      }
+    },
+    {
+      "name": "messages",
+      "fields": {
+        "author": "string",
+        "body": "string",
+        "format": "string",
+        "createdAt": "datetime"
+      }
+    },
+    {
+      "name": "users",
+      "fields": {
+        "username": "string",
+        "email": "string",
+        "phone": "string",
+        "telegramId": "string",
+        "emailVerified": "boolean",
+        "phoneVerified": "boolean",
+        "telegramVerified": "boolean",
+        "emailToken": "string",
+        "phoneOtp": "string",
+        "telegramOtp": "string",
+        "createdAt": "datetime"
+      }
+    },
+    {
+      "name": "_storage",
+      "fields": {
+        "contentType": "string",
+        "size": "number",
+        "sha256": "string",
+        "createdAt": "datetime"
+      }
+    }
+  ],
+  "functions": [
+    "workflows/user-signup",
+    "workflows/game-workflow",
+    "convex/functions/deposit",
+    "convex/functions/withdraw",
+    "convex/functions/bet",
+    "convex/functions/win",
+    "convex/functions/gameLogic"
+  ]
+}
